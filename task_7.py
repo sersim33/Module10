@@ -29,11 +29,18 @@ class Dog(Animal):
 
     def say(self):
         return "Woof"
+    def info(self):
+        return {
+            "nickname": self.nickname,
+            "weight": self.weight,
+            "breed": self.breed,
+            "owner": self.owner.info()
+        }
 
     def who_is_owner(self):
         return self.owner.info()
         
 owner = Owner('Graf', 25, 'Lviv')
-print(owner.info())
+#print(owner.info())
 dog = Dog('Ted', 15, 'labrador', owner)
 print(dog.info())
